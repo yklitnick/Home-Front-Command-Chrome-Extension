@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" class="notranslate" translate="no">
+	<head>
+	    <meta charset="utf-8">
+		<meta name="description" content="Cumta - Alerts">
+		<meta name="author" content="Mor Haviv">
+		<meta name="google" content="notranslate">
+		
+		<title>Cumta</title>
+		
+		<!-- Scripts -->
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="jquery_ui/jquery-ui.js"></script>
+		
+		<!-- Cascading Style Sheets -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="jquery_ui/jquery-ui.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/custom.css" rel="stylesheet" media="screen">		
+	</head>
+	
+	<body>
+
+
+
+	
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" id="enableButton">כומתה</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a id="recentAlertsButton" href="#">אזעקות אחרונות</a>
+					</li>
+					<li>
+						<a id="selectAlertsButton" href="#">בחירת אזור התרעה</a>
+					</li>
+					<li class="dropdown">
+						<a id="dropdownButton" href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b>הגדרות</a>
+						<ul class="dropdown-menu" style="text-align: right; float: right;">
+							<li>
+								<a id="alertSoundButton" href="#">צליל התרעה</a>
+							</li>
+							<li>
+								<a id="moreSettingsButton" href="#">הגדרות נוספות</a>
+							</li>
+							<li>
+								<a id="creditsButton" href="#">אודות</a>
+							</li>
+							<li>
+								<a id="errorReport" href="#">דווח על תקלה</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<section id="recentAlerts" style="height: 100%; overflow-y: hidden">
+				<iframe id="recentFrame" style="width: 100%; height: 100%; border: 0;" src="http://cumta.morhaviv.com/systems/app/chrome/showRecent.php?id="></iframe>
+		</section>
+		<div id="black_container" style="background-color: #777777; display: none;"> 
+		<section class="container" style="background-color: #565656">
+		<section id="alertSound" style="display: none; overflow-y: hidden; text-align: center; direction: rtl;">
+		   <p style="font-weight: bold; color: white;">צליל התרעה:</p>
+			<form>
+				<select id="soundSelector" style="width: 50%; height:45px; margin: 0 auto; text-align: center">
+					<option>ללא</option>
+					<option>מטוס</option>
+					<option>צבע אדום</option>
+					<option>אזעקה ארוכה</option>
+					<option>אזעקה קצרה</option>
+					<option>סירנה</option>
+					<option>צפצוף חלש</option>
+					<option>פעמון</option>
+				</select>
+			</form>
+			<br>
+			<button id="testAlert" class="button" style="padding: 5px 10px; font-weight: bold">בדיקה</button>
+		</section>
+		
+		<section id="moreSettings" style="display: none; overflow-y: hidden; text-align: center; direction: rtl;">
+			<label style="font-size: 15px; color: white">
+				<input type="checkbox" id="special"> בטל התרעה יעודית והשתמש בהתרעות מערכת ההפעלה
+			</label>
+			<label style="font-size: 15px; color: white">
+				<input type="checkbox" id="preventfocus"> מנע מהתראה לקפוץ במהלך שימוש בתוכנות אחרות
+			</label>
+			<hr>
+			<label style="font-size: 15px; color: white">
+				<input type="checkbox" id="silent"> קבלת התרעות עבור אזורים שלא נבחרו
+			</label>
+			<p style="font-size: 12px; font-weight: bold; color: white">*זמין רק במידה ובחרת אזור לקבלת התרעות*</p>
+			<br>
+		   <p style="font-weight: bold; color: white;">צליל התרעה לאזורים שלא נבחרו:</p>
+			<form>
+				<select id="secondarySoundSelector" style="width: 50%; height:45px; margin: 0 auto; text-align: center">
+					<option>ללא</option>
+					<option>מטוס</option>
+					<option>צבע אדום</option>
+					<option>אזעקה ארוכה</option>
+					<option>אזעקה קצרה</option>
+					<option>סירנה</option>
+					<option>צפצוף חלש</option>
+					<option>פעמון</option>
+				</select>
+			</form>
+			<br>
+			<button id="testSecondaryAlert" class="button" style="padding: 5px 10px; font-weight: bold">בדיקה</button>
+        </section>
+		
+		<section id="selectAlerts" style="display: none; overflow-y: hidden; direction: rtl;">
+		    <div id="search-div" style="width:299px; margin-left: auto; margin-right: auto;">
+				<input id="search" style="font-size: 18px; padding: 5px; display: block; margin: 0 auto;" placeholder="הקלד יישוב לקבלת התרעות">
+				<div id="selected-cities" style="font-weight: bold; color: white; margin-top: 10px;position: relative;"></div>
+            </div>
+            <div id="cities-list" style="text-align: right; margin: 0 auto; color: white; height: 150px; width: 299px">
+				<div id="cities-div" style="height: 100%; margin: auto; overflow-y: scroll">
+				</div>
+			</div>
+            <div id="search-div-street" style="display:none; width:299px; margin-left: auto; margin-right: auto; margin-top: 10px;">
+                <input id="search-street" style="font-size: 18px; padding: 5px; display: block; margin: 0 auto;" placeholder="הקלד רחוב לקבלת התרעות">
+            </div>
+            <div id="streets-list" style="text-align: right; margin: 0 auto; color: white; display:none; height: 150px; width: 299px; margin-top: 10px;">
+				<div id="streets-div" style="height: 100%; margin: auto; overflow-y: scroll">
+				</div>
+			</div>
+			<div id="clearing" style="color: orange; font-weight: bold; font-family: arial; cursor: pointer; text-align: center;">בחר את כל הארץ</div>
+	    </section>
+		
+		<section id="credits" style="display: none; overflow-y: hidden; direction: rtl;">
+			<h2 style="text-align: center; font-weight: bold;color: white">קרדיטים</h2>
+			<p style="line-height: 150%; color: white; text-align: right; font-weight: bold; font-size: 16px">"כומתה" הינו תוסף המדווח על אזעקות ברחבי הארץ בזמן אמת. <br>
+			בהשמע האזעקה, המשתמש מקבל התרעה בזמן אמת למחשבו אודות איזור ההתרעה והיישובים בהם נשמעת האזעקה. <br>
+			המשתמש יכול לבחור בתוסף את אזור מגוריו ובכך לקבל התרעות רק לאזעקות הנשמעות באזור בו הוא גר. <br>
+			בנוסף, המשתמש יכול לשנות את צליל ההתרעה ממבחר צלילים אשר מצויים בתוסף בינהם: אזעקה אמיתית, צפצוף חלש ועוד. <br>
+			המערכת עובדת בתיאום מלא ושותף עם שרתי פיקוד העורף והמידע מגיע בזמן אמת.<br>
+			<br><b>
+			המערכת נבנתה ונכתבה על ידי <a href="" id="mor">מור חביב</a></b></p>
+	    </section>
+		<script src="js/list.js"></script>
+		<script src="js/menu.js"></script>
+		
+		<div id="dialog-confirm" title="ביטול כומתה" style="display: none; direction: rtl">
+		  <p id="dialog-text"><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span></p>
+		</div>
+		</section>
+		</div>
+	</body>
+</html>

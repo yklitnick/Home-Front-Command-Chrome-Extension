@@ -1,0 +1,23 @@
+{
+   "background": {
+      "page": "script.html"
+   },
+   "browser_action": {
+      "default_icon": "img/48.png",
+      "default_popup": "popup.html"
+   },
+   "description": "התוסף מעודכן לאוגוסט 2022 - כומתה הוא התוסף הטוב ביותר להתרעות על אזעקות ברחבי הארץ בזמן אמת",
+   "icons": {
+      "128": "img/128.png",
+      "16": "img/16.png",
+      "48": "img/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy61tN69AQ0YyET+Z3RUF/BFnYNlO1MnUTfdC96Q5I5ZFsH/n7O94NPRNd58D2bsSbh5ytxxRRLkgk0056Jz/kE9zb5/aYwfrlCusUEI76UZ42rv0IUCDVJbc9KRYlGCagJ2+ik16LJBYXx7+hDxBFWFWGpopSN90KIXQCtYcq3M1knAWfa4+A8qRjim6JmNdd1S+s9oBcbelozCpm8lYs8qDK5xRbL5F89AfcKs2flImSj0p/pIEj3OXgLWnLRYgWiZM/hyi35Ailj1O5oUei0Y9uIx5rtxWVfale7cXlvo89F5h6HUMmf97E2M7fESXs9E2TnAGFin+UpZon07o5wIDAQAB",
+   "manifest_version": 2,
+   "name": "כומתה|אזעקות צבע אדום בזמן אמת|פיקוד העורף",
+   "permissions": [ "https://cumta.morhaviv.com/*", "https://morhaviv.com/*", "http://cumta.morhaviv.com/*", "http://morhaviv.com/*", "http://www.oref.org.il/*", "notifications", "storage" ],
+   "short_name": "כומתה | אזעקות בזמן אמת",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.9.3",
+   "web_accessible_resources": [ "logo.png" ]
+}

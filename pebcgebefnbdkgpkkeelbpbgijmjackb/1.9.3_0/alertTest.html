@@ -1,0 +1,168 @@
+﻿<html lang="en" class="notranslate" translate="no">
+<header>
+<meta name="google" content="notranslate">
+<script type="text/javascript" src="js/jquery-1.7.1.min.js?SiteVersion=2.7"></script>
+<script type="text/javascript" src="js/jquery-ui.js?SiteVersion=2.7"></script> 
+<title>אזעקת צבע אדום!</title>
+<link rel="stylesheet" href="css/icon.css">
+<link rel="stylesheet" href="css/material.indigo-pink.min.css">
+<script defer src="js/material.min.js"></script>
+<style>
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);}
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:window-inactive  {background: orange;}
+hr {
+	border-top: 1px solid #8c8b8b;
+	margin: 0em;
+}
+
+.grid-container {
+  display: grid;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 200px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: row;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-image: linear-gradient(#7e0101, #ae0202);
+  height: 26.7px;
+  color: white;
+}
+.grid-area {
+  text-decoration: none;
+}
+</style>
+</header>
+<body style="width: 444px; height: 300px; background: white; direction: rtl; float: right">
+
+<img src="img/OrefAlertsTitle.png">
+<div id="alertsGrid" class="grid-container">
+</div>
+<a href="#" class="grid-area" id="area"><div class="grid-item" ><font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">בדיקה!</font></div></a>
+<!--<table>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">יהודה 207 / ים המלח 207</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">עוטף עזה 220</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">עוטף עזה 220</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">עוטף עזה 220</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">עוטף עזה 220</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">עוטף עזה 220</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">עוטף עזה 220</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">עוטף עזה 220</font>
+		</td>
+		<td style="background-image: linear-gradient(#7e0101, #ae0202); height: 15px">
+			<font style="padding-left: 10px; padding-right: 10px; color: white; font-size: 15px; font-weight: bold; line-height: 20px; vertical-align: middle">דן 160</font>
+		</td>
+	</tr>
+</table>-->
+
+
+<!--<font id="areas" style="font-family: arial; color: red; font-weight: bold;">אזעקה בדן 160, דן 161, דן 162, דן 165, דן 156אזעקה בדן 160, דן 161, דן 162, דן 165, דן 156אזעקה בדן 160, דן 161, דן 162, דן 165, דן 156, דן 157, דן 158, דן 159, עוטף עזה 220</font>-->
+<br>
+<br>
+<div id="cities_box" style="
+	display: none;
+    color: white;
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    bottom: 30;
+    right: 0;
+    height: fit-content;
+    width: 90%;
+    margin: auto;
+    border-radius: 25px;
+    border: 1px solid black;
+    background: #fc8b00;
+">       
+	<a href="#" id="x" style="
+		position: absolute;
+		background: white;
+		color: black;
+		top: -10px;
+		right: -4px;
+		text-decoration: none;
+	">
+		X
+	</a>
+	<font id="cities" style="font-size: 13px;font-family: arial;color: white;line-height: normal;font-weight: bold;"></font>
+</div>
+<br>
+<br>
+<div id="buttons" style="bottom: 0; position: fixed; width: 100%">
+	<hr>
+	<div id="map" style="width: 100%; text-align: right; background-image: linear-gradient(#9a9a9a, #616161);" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+		<img src="open.png" style="height: 16px; width: 16px">
+		<font style="font-family: arial; font-weight: bold; color: white;">פתח מפה אינטראקטיבית</font>
+	</div>
+	<hr>
+	<div id="copy" style="width: 100%; text-align: right; background-image: linear-gradient(#9a9a9a, #616161)" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+		<img src="copy.png">
+		<font style="font-family: arial; font-weight: bold; color: white;">העתק התרעה</font>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/alertTest.js"></script>
+</html>
